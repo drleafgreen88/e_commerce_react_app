@@ -1,10 +1,22 @@
 import React from "react"
 
-const ShopItem = () => {
+
+const ShopItem = ({item, onItemClick}) => {
+
+    const handleClick = () => {
+        onItemClick(item)
+    }
 
     return(
-    <p>I'm a shop list item</p>
+    <>
+        <li value={item}>Name: {item.name}</li>
+        <li>Price: {item.price}</li>
+        <button value={item} onClick={handleClick}>Add to basket</button>
+    </>
     )
 }
 
 export default ShopItem
+
+
+
